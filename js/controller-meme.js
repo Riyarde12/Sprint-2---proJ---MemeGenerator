@@ -11,7 +11,11 @@ function init() {
 }
 
 function renderMeme() {
-
+    var img = new Image();
+    img.src = 'imgs/1.jpg';
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
+    };
 }
 
 function onOpenEditor() {
