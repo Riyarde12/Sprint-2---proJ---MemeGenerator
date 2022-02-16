@@ -9,8 +9,62 @@
     <title>Meme Generator</title>
 </head>
 
-<body>
+<body onload="init()">
+    <header class="header-layout">
+        <div class="header-container flex main-layout">
+            <div class="top-bar">
+                <h1 class="logo">Memegen</h1>
+            </div>
+            <nav>
+                <div class="search-bar">
+                    <label for="site-search">Search the site:</label>
+                    <input type="search" id="site-search" name="q" aria-label="Search through site content">
+                </div>
+            </nav>
 
+        </div>
+    </header>
+    <!-- MAIN -->
+    <main class="main-gallery main-layout ">
+        <div class="div-container main-layout">
+            <div class="grid">
+                <img src="imgs/1.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/2.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/3.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/4.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/5.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/6.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/7.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/8.jpg" alt="" onclick="onOpenEditor()">
+                <img src="imgs/9.jpg" alt="" onclick="onOpenEditor()">
+            </div>
+        </div>
+    </main>
+    <!-- EDITOR-MEME\CANVAS -->
+    <section class="my-modal align-center">
+        <header>
+            <h1>Memegen</h1>
+            <h3>Gallery</h3>
+            <h3>About</h3>
+        </header>
+        <main class="">
+            <div class="editor-container flex">
+                <div class="container-tools-editor">
+                    <input type="text">
+                </div>
+                <div class="canvas-container">
+                    <canvas width="400" height="400" style="outline:1px solid green"></canvas>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h1>Memegen</h1>
+        </footer>
+    </section>
+    <footer class="main-footer">
+        <div>Yarden Rishoni</div>
+        <div>Memegen</div>
+    </footer>
 
     <script src="js/util-meme.js"></script>
     <script src="js/service-meme.js"></script>

@@ -1,0 +1,25 @@
+.my-modal {
+    background-color: aquamarine;
+    position: absolute;
+    top: 0px;
+    left: 150%;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.my-modal.open {
+    left: 50%;
+    transition: left 0.5s;
+}
+
+.canvas-container {
+    width: 60vw;
+    height: 80vh;
+}
+
+.container-tools-editor {}
+
+.editor-container {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}

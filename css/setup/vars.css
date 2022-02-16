@@ -1,0 +1,10 @@
+:root {
+    /* top nav header */
+    --clr1: #FF7F00;
+    /* gray for back-ground main-body */
+    --clr2: #E3E3E3;
+    /* white for bottom nav header + footer */
+    --clr3: #FEFEFE;
+    /* font color black for nav letters and chars */
+    --clr: #040A2C;
+}

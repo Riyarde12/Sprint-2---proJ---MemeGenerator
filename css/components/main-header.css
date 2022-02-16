@@ -1,0 +1,13 @@
+.main-header .header-container {
+    height: 100%;
+}
+
+.top-bar {
+    background-color: var(--clr1);
+}
+
+.search-bar {
+    background-color: var(--clr1);
+}
+
+.logo {}
