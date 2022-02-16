@@ -30,15 +30,6 @@
     <main class="main-gallery main-layout ">
         <div class="div-container main-layout">
             <div class="grid">
-                <!-- <img src="imgs/1.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/2.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/3.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/4.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/5.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/6.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/7.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/8.jpg" alt="" onclick="onOpenEditor(this)">
-                <img src="imgs/9.jpg" alt="" onclick="onOpenEditor(this)"> -->
             </div>
         </div>
     </main>
@@ -55,6 +46,9 @@
             <div class="editor-container flex">
                 <div class="container-tools-editor">
                     <input type="text" onkeyup="setLineTxt(this)">
+                    <input type="color" onchange="setColor(this)">
+                    <button onclick="onSetFontSize('+')">Increase Font Size</button>
+                    <button onclick="onSetFontSize('-')">Decrease</button>
                 </div>
                 <div class="canvas-container">
                     <canvas id="my-canvas" height="450" width="450" onclick="draw(event)"></canvas>

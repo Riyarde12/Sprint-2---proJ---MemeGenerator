@@ -20,7 +20,7 @@ const memesSentences = [
 
 var gIdx = 1;
 var gImgs = [];
-
+// var gColor;
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
@@ -84,11 +84,30 @@ function getImgById(imgId) {
     return gImgs.find(img => imgId === img.id);
 }
 
-
 function setLineTxt(elInput) {
-    // debugger;
+
     console.log(gMeme);
     gMeme.lines[0].txt = elInput.value;
     console.log(gMeme);
     renderMeme(gMeme.selectedImgId);
+}
+
+function setFontSize(selectedFontSize) {
+    switch (selectedFontSize) {
+        case '+':
+            gMeme.lines[0].size++;
+            // console.log(gMeme.lines[0].size);
+            renderMeme();
+            break;
+        case '-':
+            gMeme.lines[0].size--;
+            renderMeme();
+            break;
+    }
+
+}
+
+function setColorFont(selectedColor) {
+    gMeme.lines[0].color = selectedColor;
+
 }

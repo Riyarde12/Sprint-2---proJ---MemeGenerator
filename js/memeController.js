@@ -3,12 +3,12 @@
 var gCanvas;
 var gCtx;
 
+
 function init() {
     gCanvas = document.getElementById('my-canvas');
     gCtx = gCanvas.getContext('2d');
     createImgs();
     renderGallery();
-    // renderMeme();
 }
 
 function renderMeme() {
@@ -32,39 +32,14 @@ function drawImg(imgId, meme) {
 function drawText(x, y, text) {
     // gCtx.font = '48px serif';
     // gCtx.fillText(text, x, y);
-
+    const meme = getMeme();
     gCtx.lineWidth = 1;
-    gCtx.strokeStyle = 'brown';
-    gCtx.fillStyle = 'black';
-    gCtx.font = '20px Arial';
+    gCtx.strokeStyle = meme.lines[0].color;
+    gCtx.fillStyle = meme.lines[0].color;
+    gCtx.font = `${meme.lines[0].size}px Ariel`;
     gCtx.fillText(text, x, y);
     gCtx.strokeText(text, x, y);
 }
-
-// function draw(ev) {
-//     const offsetX = ev.offsetX;
-//     const offsetY = ev.offsetY;
-
-//     gShape.pos = getEvPos(ev);
-//     console.log(offsetX);
-//     // const currShape = getShape();
-//     // currShape = { offsetX, offsetY };
-//     // console.log(offsetX,offsetY)
-//     // const { offsetX, offsetY } = ev
-//     switch (gUserShape) {
-//         case 'triangle':
-//             drawTriangle(offsetX, offsetY);
-//             break;
-//         case 'rect':
-//             drawRect(offsetX, offsetY);
-//             break;
-//         case 'arc':
-//             drawArc(offsetX, offsetY);
-//             break;
-//     }
-// }
-
-
 
 function UpdateMemeImg(imgId) {
     // var imgSelected = getImgById(imgId);
@@ -73,4 +48,17 @@ function UpdateMemeImg(imgId) {
     meme.selectedImgId = imgId;
     console.log('meme.selectedImgId', meme.selectedImgId);
     renderMeme();
+}
+
+function setColor(elInput) {
+    const selectedColor = elInput.value;
+    setColorFont(selectedColor);
+    renderMeme();
+    // console.log(color);
+    // gColor = color;
+    // gShape.color = gColor;
+}
+
+function onSetFontSize(selectFontSize) {
+    setFontSize(selectFontSize);
 }
