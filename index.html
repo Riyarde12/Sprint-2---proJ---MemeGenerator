@@ -24,7 +24,9 @@
 
         </div>
     </header>
+
     <!-- MAIN -->
+
     <main class="main-gallery main-layout ">
         <div class="div-container main-layout">
             <div class="grid">
@@ -40,7 +42,9 @@
             </div>
         </div>
     </main>
+
     <!-- EDITOR-MEME\CANVAS -->
+
     <section class="my-modal align-center">
         <header>
             <h1>Memegen</h1>
@@ -50,16 +54,13 @@
         <main class="">
             <div class="editor-container flex">
                 <div class="container-tools-editor">
-                    <input type="text">
+                    <input type="text" onkeyup="setLineTxt(this)">
                 </div>
                 <div class="canvas-container">
                     <canvas id="my-canvas" height="450" width="450" onclick="draw(event)"></canvas>
                 </div>
             </div>
         </main>
-        <footer>
-            <h1>Memegen</h1>
-        </footer>
     </section>
     <footer class="main-footer">
         <div>Yarden Rishoni</div>
@@ -67,8 +68,10 @@
     </footer>
 
     <script src="js/util-meme.js"></script>
-    <script src="js/service-meme.js"></script>
-    <script src="js/controller-meme.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/galleryService.js"></script>
+    <script src="js/memeService.js"></script>
+    <script src="js/memeController.js"></script>
 </body>
 
 </html>

@@ -34,9 +34,20 @@ var gMeme = {
     ]
 };
 
-function createMeme() {
-
-}
+// function createMeme(id) {
+//     return {
+//         selectedImgId: id,
+//         selectedLineIdx: 0,
+//         lines: [
+//             {
+//                 txt: memesSentences[id],
+//                 size: 20,
+//                 align: 'left',
+//                 color: 'red'
+//             }
+//         ]
+//     };
+// }
 
 function createImgs() {
     var imgs = [];
@@ -59,12 +70,14 @@ function getImg() {
 }
 
 function getMeme() {
+    // gMeme = createMeme(imgId);
     return gMeme;
 }
 
-function getImgByUrl(imgUrl) {
-    var currImg = gImgs.find(img => imgUrl === img.url);
+function getImgById(imgId) {
+    var currImg = gImgs.find(img => imgId === img.id);
     console.log(currImg);
+    return currImg;
 }
 
 function getImgById(imgId) {
@@ -72,3 +85,10 @@ function getImgById(imgId) {
 }
 
 
+function setLineTxt(elInput) {
+    // debugger;
+    console.log(gMeme);
+    gMeme.lines[0].txt = elInput.value;
+    console.log(gMeme);
+    renderMeme(gMeme.selectedImgId);
+}

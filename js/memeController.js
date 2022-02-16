@@ -8,16 +8,18 @@ function init() {
     gCtx = gCanvas.getContext('2d');
     createImgs();
     renderGallery();
-    renderMeme();
+    // renderMeme();
 }
 
 function renderMeme() {
+    // debugger;
     const meme = getMeme();
-    drawImg(meme.selectedImgId);
+    console.log(meme);
+    drawImg(meme.selectedImgId, meme);
 }
 
-function drawImg(imgId) {
-    const meme = getMeme();
+function drawImg(imgId, meme) {
+    // const meme = getMeme();
     var img = new Image();
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
@@ -62,28 +64,13 @@ function drawText(x, y, text) {
 //     }
 // }
 
-function renderGallery() {
 
-    const imgs = getImg();
-    var strHtml = imgs.map(img => {
-        return `<img src="imgs/${img.id}.jpg" alt="" onclick="onOpenEditor(this)">`;
-    }).join('');
-    console.log('strHtml', strHtml);
-    var elGrid = document.querySelector('.grid');
-    elGrid.innerHTML = strHtml;
+
+function UpdateMemeImg(imgId) {
+    // var imgSelected = getImgById(imgId);
+    // console.log(imgSelected);
+    const meme = getMeme();
+    meme.selectedImgId = imgId;
+    console.log('meme.selectedImgId', meme.selectedImgId);
+    renderMeme();
 }
-
-function onSelectedImg(imgUrl) {
-    getImgByUrl(imgUrl);
-}
-
-function onOpenEditor(elImg) {
-    var imgUrl = elImg.src;
-
-    onSelectedImg(imgUrl);
-
-    console.log('img', imgUrl);
-    document.querySelector('.my-modal').classList.add = ('open');
-    document.querySelector('.my-modal').style.left = '50%';
-}
-
