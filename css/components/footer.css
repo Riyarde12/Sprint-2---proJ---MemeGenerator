@@ -1,9 +1,17 @@
 .top-footer {
     background-color: var(--clr3);
-    height: 200px;
 }
 
 .bottom-footer {
     background-color: var(--clr1);
     height: 120px;
+    width: 100%;
+}
+
+.container-about {
+    display: contents;
+}
+
+.content {
+    padding: 15px;
 }
