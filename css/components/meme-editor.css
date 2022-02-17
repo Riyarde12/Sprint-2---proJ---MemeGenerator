@@ -3,10 +3,12 @@
 }
 
 .canvas-container {
-    margin: auto;
+    /* margin: auto; */
 }
 
-/* .container-tools-editor {} */
+.container-tools-editor {
+    flex-wrap: wrap;
+}
 
 .editor-container {
     background-color: var(--clr2);
