@@ -1,7 +1,6 @@
 function onClickImg(elImg) {
     openEditor();
     var selectedImgId = +elImg.id;
-    // console.log(imgId);
     UpdateMemeImg(selectedImgId);
 }
 

@@ -20,13 +20,19 @@ const memesSentences = [
 
 var gIdx = 1;
 var gImgs = [];
-// var gColor;
+var gCurrLine = 1;
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [
         {
             txt: 'I sometimes eat Falafel',
+            size: 20,
+            align: 'left',
+            color: 'red'
+        },
+        {
+            txt: 'May the force be with you',
             size: 20,
             align: 'left',
             color: 'red'
@@ -70,7 +76,6 @@ function getImg() {
 }
 
 function getMeme() {
-    // gMeme = createMeme(imgId);
     return gMeme;
 }
 
@@ -85,18 +90,31 @@ function getImgById(imgId) {
 }
 
 function setLineTxt(elInput) {
+    // debugger;
 
-    console.log(gMeme);
-    gMeme.lines[0].txt = elInput.value;
-    console.log(gMeme);
-    renderMeme(gMeme.selectedImgId);
+    // switch text line selected
+    switch (gCurrLine) {
+        case 1:
+            gMeme.lines[0].txt = elInput.value;
+            console.log(gCurrLine);
+            renderMeme();
+            break;
+        case 2:
+            gMeme.lines[1].txt = elInput.value;
+            console.log(gCurrLine);
+            renderMeme();
+            break;
+    }
+    // console.log(gMeme);
+
+    // console.log(gMeme);
+
 }
 
 function setFontSize(selectedFontSize) {
     switch (selectedFontSize) {
         case '+':
             gMeme.lines[0].size++;
-            // console.log(gMeme.lines[0].size);
             renderMeme();
             break;
         case '-':
@@ -104,10 +122,13 @@ function setFontSize(selectedFontSize) {
             renderMeme();
             break;
     }
-
 }
 
 function setColorFont(selectedColor) {
     gMeme.lines[0].color = selectedColor;
+}
 
+function setLine() {
+    gCurrLine++;
+    if (gCurrLine === 3) gCurrLine = 0;
 }
