@@ -2,4 +2,13 @@
     .main-layout {
         max-width: 450px;
     }
+
+    .grid {
+        max-width: 370px;
+        margin: auto;
+    }
+
+    .my-editor {
+        max-width: 370px;
+    }
 }
