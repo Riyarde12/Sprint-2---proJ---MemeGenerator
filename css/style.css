@@ -12,6 +12,6 @@
 @import 'components/main-header.css';
 @import 'components/main-nav.css';
 @import 'components/main-gallery.css';
-/* @import 'components/footer.css'; */
 @import 'components/footer.css';
+
 @import 'basic/mq.css';
