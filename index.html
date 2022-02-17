@@ -45,15 +45,15 @@
         <main class="">
             <div class="editor-container flex">
                 <div class="container-tools-editor">
-                    <input type="text" onkeyup="setLineTxt(this)">
+                    <input type="text" onkeyup="onSetLineText(this)">
                     <input type="color" onchange="setColor(this)">
                     <button onclick="onSetFontSize('+')">Increase Font Size</button>
                     <button onclick="onSetFontSize('-')">Decrease</button>
-                    <button onclick="onSwitchLine('+')"">Switch Lines</button>
+                    <button onclick="onSwitchLine(event)">Switch Lines</button>
 
                 </div>
                 <div class=" canvas-container">
-                        <canvas id="my-canvas" height="450" width="450" onclick="draw(event)"></canvas>
+                    <canvas id="my-canvas" height="450" width="450" onclick="draw(event)"></canvas>
                 </div>
             </div>
         </main>

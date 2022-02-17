@@ -20,7 +20,6 @@ const memesSentences = [
 
 var gIdx = 1;
 var gImgs = [];
-var gCurrLine = 1;
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
@@ -39,21 +38,6 @@ var gMeme = {
         }
     ]
 };
-
-// function createMeme(id) {
-//     return {
-//         selectedImgId: id,
-//         selectedLineIdx: 0,
-//         lines: [
-//             {
-//                 txt: memesSentences[id],
-//                 size: 20,
-//                 align: 'left',
-//                 color: 'red'
-//             }
-//         ]
-//     };
-// }
 
 function createImgs() {
     var imgs = [];
@@ -89,37 +73,29 @@ function getImgById(imgId) {
     return gImgs.find(img => imgId === img.id);
 }
 
-function setLineTxt(elInput) {
-    // debugger;
+function setLineTxt(text) {
 
     // switch text line selected
-    switch (gCurrLine) {
-        case 1:
-            gMeme.lines[0].txt = elInput.value;
-            console.log(gCurrLine);
-            renderMeme();
+    switch (gMeme.selectedLineIdx) {
+        case 0:
+            gMeme.lines[0].txt = text;
+            console.log(gMeme.lines[0].txt);
             break;
-        case 2:
-            gMeme.lines[1].txt = elInput.value;
-            console.log(gCurrLine);
-            renderMeme();
+        case 1:
+            gMeme.lines[1].txt = text;
+            console.log(gMeme.lines[1].txt);
             break;
     }
-    // console.log(gMeme);
-
-    // console.log(gMeme);
-
 }
 
 function setFontSize(selectedFontSize) {
     switch (selectedFontSize) {
         case '+':
             gMeme.lines[0].size++;
-            renderMeme();
+
             break;
         case '-':
             gMeme.lines[0].size--;
-            renderMeme();
             break;
     }
 }
@@ -129,6 +105,6 @@ function setColorFont(selectedColor) {
 }
 
 function setLine() {
-    gCurrLine++;
-    if (gCurrLine === 3) gCurrLine = 0;
+    gMeme.selectedLineIdx++;
+    if (gMeme.selectedLineIdx === 2) gMeme.selectedLineIdx = 0;
 }

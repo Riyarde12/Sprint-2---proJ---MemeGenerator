@@ -53,8 +53,16 @@ function setColor(elInput) {
 
 function onSetFontSize(selectFontSize) {
     setFontSize(selectFontSize);
+    renderMeme();
+}
+
+function onSetLineText(elInput) {
+    var text = elInput.value;
+    setLineTxt(text);
+    renderMeme();
 }
 
 function onSwitchLine() {
     setLine();
+    renderMeme();
 }
