@@ -92,7 +92,6 @@ function setFontSize(selectedFontSize) {
     switch (selectedFontSize) {
         case '+':
             gMeme.lines[0].size++;
-
             break;
         case '-':
             gMeme.lines[0].size--;
