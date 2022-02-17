@@ -28,18 +28,36 @@ function drawImg(imgId, meme) {
 }
 
 function drawText(x, y, text) {
-
+    // debugger;
+    const width = text.length + 15;
+    const height = 50;
     const meme = getMeme();
+    console.log('meme', meme);
+    // gCtx.beginPath();
     gCtx.lineWidth = 1;
-    gCtx.strokeStyle = meme.lines[0].color;
-    gCtx.fillStyle = meme.lines[0].color;
-    gCtx.font = `${meme.lines[0].size}px Ariel`;
-    gCtx.fillText(text, x, y);
-    gCtx.strokeText(text, x, y);
+    if (x === 30 && y === 30) {
+        gCtx.strokeStyle = meme.lines[0].color;
+        gCtx.fillStyle = meme.lines[0].color;
+        gCtx.font = `${meme.lines[0].size}px Ariel`;
+        gCtx.fillText(text, x, y);
+        gCtx.strokeText(text, x, y);
+        console.log('on controller', meme.lines[0].color);
+    }
+    if (x === 30 && y === 350) {
+        gCtx.strokeStyle = meme.lines[1].color;
+        gCtx.fillStyle = meme.lines[1].color;
+        gCtx.font = `${meme.lines[1].size}px Ariel`;
+        gCtx.fillText(text, x, y);
+        gCtx.strokeText(text, x, y);
+        console.log('on controller', meme.lines[1].color);
+    }
+    // gCtx.fillText(text, x, y);
+    // gCtx.strokeRect(x, y, width, height);
+    // gCtx.drawFocusIfNeeded(path);
+    // gCtx.strokeText(text, x, y);
 }
 
 function UpdateMemeImg(imgId) {
-
     const meme = getMeme();
     meme.selectedImgId = imgId;
     renderMeme();
@@ -62,7 +80,13 @@ function onSetLineText(elInput) {
     renderMeme();
 }
 
+function focusOnTextLine() {
+    const meme = getMeme();
+    document.getElementById("myText").value = meme.lines[meme.selectedLineIdx].txt;
+}
+
 function onSwitchLine() {
     setLine();
+    focusOnTextLine();
     renderMeme();
-}
+} 

@@ -28,13 +28,13 @@ var gMeme = {
             txt: 'I sometimes eat Falafel',
             size: 20,
             align: 'left',
-            color: 'red'
+            color: 'black'
         },
         {
             txt: 'May the force be with you',
             size: 20,
             align: 'left',
-            color: 'red'
+            color: 'black'
         }
     ]
 };
@@ -100,7 +100,14 @@ function setFontSize(selectedFontSize) {
 }
 
 function setColorFont(selectedColor) {
-    gMeme.lines[0].color = selectedColor;
+    if (gMeme.selectedLineIdx === 0) {
+        gMeme.lines[0].color = selectedColor;
+        console.log('on service idx 0', gMeme.lines[0].color);
+    }
+    if (gMeme.selectedLineIdx === 1) {
+        gMeme.lines[1].color = selectedColor;
+        console.log('on service idx 1', gMeme.lines[1].color);
+    }
 }
 
 function setLine() {

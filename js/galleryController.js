@@ -15,7 +15,6 @@ function renderGallery() {
     var strHtml = imgs.map(img => {
         return `<img id="${id++}" src="imgs/${img.id}.jpg" alt="" onclick="onClickImg(this)">`;
     }).join('');
-    console.log('strHtml', strHtml);
     var elGrid = document.querySelector('.grid');
     elGrid.innerHTML = strHtml;
 }
