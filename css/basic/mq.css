@@ -1,0 +1,5 @@
+@media (max-width: 520) {
+    .main-layout {
+        max-width: 450px;
+    }
+}

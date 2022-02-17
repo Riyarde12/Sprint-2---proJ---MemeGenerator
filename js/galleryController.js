@@ -6,12 +6,11 @@ function onClickImg(elImg) {
 
 function openEditor() {
     document.querySelector('.main-gallery').classList.add('visible');
-    document.querySelector('.my-modal').classList.remove('visible');
+    document.querySelector('.my-editor').classList.remove('visible');
 }
 
 function openGallery() {
-    debugger;
-    document.querySelector('.my-modal').classList.add('visible');
+    document.querySelector('.my-editor').classList.add('visible');
     document.querySelector('.main-gallery').classList.remove('visible');
 }
 

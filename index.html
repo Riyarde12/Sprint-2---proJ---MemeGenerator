@@ -24,8 +24,9 @@
             </div>
             <nav>
                 <div class="search-bar">
-                    <label for="site-search">Search the site:</label>
-                    <input type="search" id="site-search" name="q" aria-label="Search through site content">
+                    <input type="search" placeholder="Enter search Keyword" id="site-search" name="q"
+                        aria-label="Search through site content">
+                    <label for="site-search"><img class="search-icon" src="ICONS/search-icon.png"></label>
                 </div>
             </nav>
 
@@ -41,23 +42,23 @@
         </main>
     </section>
     <!-- EDITOR-MEME\CANVAS -->
-    <section class="visible my-modal main-layout flex align-center">
-        <header>
-            <h1>Memegen</h1>
-            <h3>Gallery</h3>
-            <h3>About</h3>
-        </header>
+    <section class="visible my-editor main-layout flex align-center">
         <main class="">
             <div class="editor-container flex">
                 <div class="container-tools-editor">
                     <input type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
                     <input type="color" onchange="setColor(this)">
-                    <button onclick="onSetFontSize('+')">Increase Font Size</button>
-                    <button onclick="onSetFontSize('-')">Decrease</button>
-                    <button onclick="onSwitchLine(this)">Switch Lines</button>
+                    <button onclick="onSetFontSize('+')"><img class="icon" src="ICONS/increase-font.png"></button>
+                    <button onclick="onSetFontSize('-')"><img class="icon" src="ICONS/decrease-font.png"></button>
+                    <button onclick="onSwitchLine(this)"><img class="icon" src="ICONS/switch-lines.png"></button>
+                    <button><img class="icon" src="ICONS/align-to-left.png"></button>
+                    <button><img class="icon" src="ICONS/align-to-right.png"></button>
+                    <button><img class="icon" src="ICONS/align-to-center.png"></button>
+                    <button><img class="icon" src="ICONS/facebook-logo.png"></button>
+                    <button><img class="icon" src="ICONS/add.png"></button>
                 </div>
                 <div class=" canvas-container">
-                    <canvas id="my-canvas" height="450" width="450"></canvas>
+                    <canvas id="my-canvas" height="400" width="641"></canvas>
                 </div>
             </div>
         </main>

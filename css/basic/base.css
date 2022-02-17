@@ -30,4 +30,12 @@ img {
     gap: 1.57142em 1.5em;
 }
 
+img.icon {
+    width: 3.751rem;
+}
+
+.search-icon {
+    width: 1.2rem;
+}
+
 /* .div-container {} */

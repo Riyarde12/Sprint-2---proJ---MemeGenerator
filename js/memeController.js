@@ -104,5 +104,5 @@ function resizeCanvas() {
     // Note: changing the canvas dimension this way clears the canvas
     gCanvas.width = elContainer.offsetWidth - 20;
     // Unless needed, better keep height fixed.
-    //   gCanvas.height = elContainer.offsetHeight
+    // gCanvas.height = elContainer.offsetHeight - 10;
 }
