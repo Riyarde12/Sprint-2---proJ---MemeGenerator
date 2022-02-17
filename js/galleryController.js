@@ -5,8 +5,14 @@ function onClickImg(elImg) {
 }
 
 function openEditor() {
-    document.querySelector('.my-modal').classList.add = ('open');
-    document.querySelector('.my-modal').style.left = '50%';
+    document.querySelector('.main-gallery').classList.add('visible');
+    document.querySelector('.my-modal').classList.remove('visible');
+}
+
+function openGallery() {
+    debugger;
+    document.querySelector('.my-modal').classList.add('visible');
+    document.querySelector('.main-gallery').classList.remove('visible');
 }
 
 function renderGallery() {

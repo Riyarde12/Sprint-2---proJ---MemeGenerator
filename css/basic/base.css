@@ -6,6 +6,7 @@ html {
     color: var(--col5);
     line-height: 1.25;
     font-family: lato-reg, serif;
+    font-size: 16px;
 }
 
 body {
@@ -29,4 +30,4 @@ img {
     gap: 1.57142em 1.5em;
 }
 
-.div-container {}
+/* .div-container {} */

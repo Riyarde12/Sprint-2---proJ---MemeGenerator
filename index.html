@@ -10,10 +10,17 @@
 </head>
 
 <body onload="init()">
-    <header class="header-layout">
-        <div class="header-container flex main-layout">
-            <div class="top-bar">
-                <h1 class="logo">Memegen</h1>
+    <!-- HEADER NAV-BAR -->
+    <header class="main-header">
+        <div class="header-container flex space-between main-layout">
+            <div class="top-bar flex space-between">
+                <div>
+                    <h1 class="logo">Memegen</h1>
+                </div>
+                <div>
+                    <h3 onclick="openGallery()">Gallery</h3>
+                    <h3>About</h3>
+                </div>
             </div>
             <nav>
                 <div class="search-bar">
@@ -24,19 +31,17 @@
 
         </div>
     </header>
-
-    <!-- MAIN -->
-
-    <main class="main-gallery main-layout ">
-        <div class="div-container main-layout">
-            <div class="grid">
+    <!-- MAIN GALLERY -->
+    <section class="main-gallery">
+        <main class="main-gallery main-layout">
+            <div class="div-container main-layout">
+                <div class="grid">
+                </div>
             </div>
-        </div>
-    </main>
-
+        </main>
+    </section>
     <!-- EDITOR-MEME\CANVAS -->
-
-    <section class="my-modal align-center">
+    <section class="visible my-modal main-layout flex align-center">
         <header>
             <h1>Memegen</h1>
             <h3>Gallery</h3>

@@ -1,8 +1,10 @@
 .main-layout {
-    max-width: 600px;
-    padding: 27px 20px 27px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
 }
 
-.header-layout {
+/* .header-layout {
     max-width: 600px;
-}
+} */
