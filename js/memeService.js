@@ -28,7 +28,8 @@ var gMeme = {
             txt: 'I sometimes eat Falafel',
             size: 20,
             align: 'left',
-            color: 'black'
+            color: 'black',
+            font: 'Impact'
         },
         {
             txt: 'May the force be with you',
@@ -73,17 +74,20 @@ function getImgById(imgId) {
     return gImgs.find(img => imgId === img.id);
 }
 
-function setLineTxt(text) {
+function setLineTxt(newText) {
 
     // switch text line selected
-    switch (gMeme.selectedLineIdx) {
-        case 0:
-            gMeme.lines[gMeme.selectedLineIdx].txt = text;
-            break;
-        case 1:
-            gMeme.lines[gMeme.selectedLineIdx].txt = text;
-            break;
-    }
+
+    gMeme.lines[gMeme.selectedLineIdx].txt = newText;
+
+    // switch (gMeme.selectedLineIdx) {
+    //     case 0:
+    //         gMeme.lines[gMeme.selectedLineIdx].txt = text;
+    //         break;
+    //     case 1:
+    //         gMeme.lines[gMeme.selectedLineIdx].txt = text;
+    //         break;
+    // }
 }
 
 function setFontSize(selectedFontSize) {
@@ -98,18 +102,20 @@ function setFontSize(selectedFontSize) {
 }
 
 function setColorFont(selectedColor) {
-    // if (gMeme.selectedLineIdx === 0) {
-    //     gMeme.lines[0].color = selectedColor;
-    //     console.log('on service idx 0', gMeme.lines[0].color);
-    // }
-    // if (gMeme.selectedLineIdx === 1) {
-    //     gMeme.lines[1].color = selectedColor;
-    //     console.log('on service idx 1', gMeme.lines[1].color);
-    // }
     gMeme.lines[gMeme.selectedLineIdx].color = selectedColor;
 }
 
 function setLine() {
     gMeme.selectedLineIdx++;
-    if (gMeme.selectedLineIdx === 2) gMeme.selectedLineIdx = 0;
+    if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
+    console.log('currline set - service', gMeme.selectedLineIdx);
+}
+
+function setNewLine() {
+    gMeme.lines.push({
+        txt: '',
+        size: 20,
+        align: 'left',
+        color: 'black'
+    });
 }
