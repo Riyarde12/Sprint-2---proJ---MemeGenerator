@@ -15,7 +15,6 @@ function init() {
 function addListeners() {
     window.addEventListener('resize', () => {
         resizeCanvas();
-        // renderCanvas();
     });
 }
 
@@ -37,17 +36,14 @@ function drawImg(imgId, meme) {
 }
 
 function drawText(x, y, text) {
-    // debugger;
-    const width = text.length + 15;
-    const height = 50;
+
     const meme = getMeme();
     console.log('meme', meme);
-    // gCtx.beginPath();
     gCtx.lineWidth = 1;
     if (x === 30 && y === 30) {
         gCtx.strokeStyle = meme.lines[0].color;
         gCtx.fillStyle = meme.lines[0].color;
-        gCtx.font = `${meme.lines[0].size}px Ariel`;
+        gCtx.font = `${meme.lines[0].size}px Impact`;
         gCtx.fillText(text, x, y);
         gCtx.strokeText(text, x, y);
         console.log('on controller', meme.lines[0].color);
@@ -55,7 +51,7 @@ function drawText(x, y, text) {
     if (x === 30 && y === 350) {
         gCtx.strokeStyle = meme.lines[1].color;
         gCtx.fillStyle = meme.lines[1].color;
-        gCtx.font = `${meme.lines[1].size}px Ariel`;
+        gCtx.font = `${meme.lines[1].size}px Impact`;
         gCtx.fillText(text, x, y);
         gCtx.strokeText(text, x, y);
         console.log('on controller', meme.lines[1].color);
@@ -104,6 +100,10 @@ function resizeCanvas() {
     var elContainer = document.querySelector('.canvas-container');
     // Note: changing the canvas dimension this way clears the canvas
     gCanvas.width = elContainer.offsetWidth - 20;
-    // Unless needed, better keep height fixed.
-    // gCanvas.height = elContainer.offsetHeight - 10;
+}
+
+function downloadCanvas(elLink) {
+    const data = gCanvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'screenshot';
 }

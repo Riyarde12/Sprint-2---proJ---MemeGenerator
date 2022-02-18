@@ -78,12 +78,10 @@ function setLineTxt(text) {
     // switch text line selected
     switch (gMeme.selectedLineIdx) {
         case 0:
-            gMeme.lines[0].txt = text;
-            console.log(gMeme.lines[0].txt);
+            gMeme.lines[gMeme.selectedLineIdx].txt = text;
             break;
         case 1:
-            gMeme.lines[1].txt = text;
-            console.log(gMeme.lines[1].txt);
+            gMeme.lines[gMeme.selectedLineIdx].txt = text;
             break;
     }
 }
@@ -91,23 +89,24 @@ function setLineTxt(text) {
 function setFontSize(selectedFontSize) {
     switch (selectedFontSize) {
         case '+':
-            gMeme.lines[0].size++;
+            gMeme.lines[gMeme.selectedLineIdx].size++;
             break;
         case '-':
-            gMeme.lines[0].size--;
+            gMeme.lines[gMeme.selectedLineIdx].size--;
             break;
     }
 }
 
 function setColorFont(selectedColor) {
-    if (gMeme.selectedLineIdx === 0) {
-        gMeme.lines[0].color = selectedColor;
-        console.log('on service idx 0', gMeme.lines[0].color);
-    }
-    if (gMeme.selectedLineIdx === 1) {
-        gMeme.lines[1].color = selectedColor;
-        console.log('on service idx 1', gMeme.lines[1].color);
-    }
+    // if (gMeme.selectedLineIdx === 0) {
+    //     gMeme.lines[0].color = selectedColor;
+    //     console.log('on service idx 0', gMeme.lines[0].color);
+    // }
+    // if (gMeme.selectedLineIdx === 1) {
+    //     gMeme.lines[1].color = selectedColor;
+    //     console.log('on service idx 1', gMeme.lines[1].color);
+    // }
+    gMeme.lines[gMeme.selectedLineIdx].color = selectedColor;
 }
 
 function setLine() {
