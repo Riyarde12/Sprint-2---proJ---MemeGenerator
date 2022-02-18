@@ -44,22 +44,19 @@ function drawText(x, y, currline) {
 
     const meme = getMeme();
     console.log('meme', meme);
-    // gCtx.lineWidth = 1;
     if (x === 30 && y === 30) {
 
         gCtx.strokeStyle = meme.lines[0].color;
         gCtx.fillStyle = meme.lines[0].color;
         gCtx.font = `${meme.lines[0].size}px ${meme.lines[0].font}`;
-        // gCtx.fillText(currline.txt, x, y);
+
         gCtx.strokeText(currline.txt, x, y);
-        // console.log('on controller', meme.lines[0].color);
     }
     if (x === 30 && y === 350) {
 
         gCtx.strokeStyle = meme.lines[1].color;
         gCtx.fillStyle = meme.lines[1].color;
         gCtx.font = `${meme.lines[1].size}px Impact`;
-        // gCtx.fillText(currline.txt, x, y);
         gCtx.strokeText(currline.txt, x, y);
 
     } else {
@@ -70,11 +67,6 @@ function drawText(x, y, currline) {
         // gCtx.fillText(currline.txt, x, y);
         gCtx.strokeText(currline.txt, x, y);
     }
-    // renderMeme();
-    // gCtx.fillText(text, x, y);
-    // gCtx.strokeRect(x, y, width, height);
-    // gCtx.drawFocusIfNeeded(path);
-    // gCtx.strokeText(text, x, y);
 }
 
 function UpdateMemeImg(imgId) {
@@ -126,19 +118,22 @@ function downloadCanvas(elLink) {
 function onAddLine() {
     setNewLine();
     renderMeme();
-    // const meme = getMeme();
-
-    // var img = new Image();
-    // img.onload = () => {
-    // gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-    // drawText(30, 30, meme.lines[0].txt);
-    // drawText(30, 350, meme.lines[1].txt);
-
-
 }
-// console.log(img.src);
-// }
 
 function onRemoveLine() {
 
 }
+
+function openLoadedMemes() {
+    document.querySelector('.main-gallery').classList.add('visible');
+    document.querySelector('.saved-memes-modal').classList.remove('visible');
+    var memes = loadMemesFromStorage();
+    console.log('memes', memes);
+
+    var strHtml = memes.map((meme) => {
+        return `<img src="${meme}">`;
+    }).join('');
+    var elMemesGrid = document.querySelector('.memes-grid');
+    elMemesGrid.innerHTML = strHtml;
+}
+

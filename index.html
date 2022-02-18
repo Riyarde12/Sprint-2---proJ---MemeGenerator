@@ -19,6 +19,7 @@
                 </div>
                 <div>
                     <h3 onclick="openGallery()">Gallery</h3>
+                    <h3 onclick="openLoadedMemes()">Load Memes</h3>
                     <h3>About</h3>
                 </div>
             </div>
@@ -63,6 +64,7 @@
                 <button><img class="icon-btn" src="ICONS/add.png" onclick="onAddLine()"></button>
                 <button><img class="icon-btn" src="ICONS/trash.png" onclick="onRemoveLine()"></button>
                 <button class="btn">Share</button>
+                <button class="btn" onclick="saveMemeToStorage()">Save Meme !</button>
                 <button class="btn">
                     <a href="#" onclick="downloadCanvas(this)" download="myphoto">Download</a>
                 </button>
@@ -70,6 +72,15 @@
         </div>
         <!-- </main> -->
     </section>
+
+    <section>
+        <div class="visible saved-memes-modal main-layout">
+            <div class="memes-grid">
+                <img id="img" src="" alt="">
+            </div>
+        </div>
+    </section>
+
     <footer class="main-footer">
         <div class="top-footer">
             <div class="container-about"><img class="myImg" src="imgs/me_img.jpg"></div>
@@ -84,8 +95,11 @@
 
         </div>
         <div class="bottom-footer">Memegen</div>
+        <img src="" alt="">
+
     </footer>
 
+    <script src="js/local-storage.js"></script>
     <script src="js/util-meme.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/galleryService.js"></script>

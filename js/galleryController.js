@@ -16,7 +16,7 @@ function openGallery() {
 
 function renderGallery() {
     var id = 1;
-    const imgs = getImg();
+    const imgs = getImgs();
     var strHtml = imgs.map(img => {
         return `<img id="${id++}" src="imgs/${img.id}.jpg" alt="" onclick="onClickImg(this)">`;
     }).join('');

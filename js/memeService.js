@@ -18,6 +18,9 @@ const memesSentences = [
     'Write hello world , add to cv 7 years experienced',
 ];
 
+const STORAGE_MEME = 'memes';
+const STORAGE_IMG = 'images';
+var savedMemes = [];
 var gIdx = 1;
 var gImgs = [];
 var gMeme = {
@@ -40,6 +43,7 @@ var gMeme = {
     ]
 };
 
+
 function createImgs() {
     var imgs = [];
     for (var i = 0; i < 9; i++) {
@@ -47,6 +51,7 @@ function createImgs() {
     }
     gImgs = imgs;
     console.log(gImgs);
+    _saveImgToStorage();
 }
 
 function createImg() {
@@ -56,7 +61,7 @@ function createImg() {
     };
 }
 
-function getImg() {
+function getImgs() {
     return gImgs;
 }
 
@@ -64,30 +69,18 @@ function getMeme() {
     return gMeme;
 }
 
-function getImgById(imgId) {
-    var currImg = gImgs.find(img => imgId === img.id);
-    console.log(currImg);
-    return currImg;
-}
+// function getImgById(imgId) {
+//     var currImg = gImgs.find(img => imgId === img.id);
+//     console.log(currImg);
+//     return currImg;
+// }
 
 function getImgById(imgId) {
     return gImgs.find(img => imgId === img.id);
 }
 
 function setLineTxt(newText) {
-
-    // switch text line selected
-
     gMeme.lines[gMeme.selectedLineIdx].txt = newText;
-
-    // switch (gMeme.selectedLineIdx) {
-    //     case 0:
-    //         gMeme.lines[gMeme.selectedLineIdx].txt = text;
-    //         break;
-    //     case 1:
-    //         gMeme.lines[gMeme.selectedLineIdx].txt = text;
-    //         break;
-    // }
 }
 
 function setFontSize(selectedFontSize) {
@@ -118,4 +111,29 @@ function setNewLine() {
         align: 'left',
         color: 'black'
     });
+    saveMemeToStorage();
 }
+
+function saveMemeToStorage() {
+    // set canvasImg image src to dataURL
+
+    var dataUrl = gCanvas.toDataURL();
+
+    savedMemes.push(dataUrl);
+    console.log(savedMemes);
+    saveToStorage(STORAGE_MEME, savedMemes);
+}
+
+function _saveImgToStorage() {
+    saveToStorage(STORAGE_IMG, gImgs);
+}
+
+function loadMemesFromStorage() {
+    var loadedMemes = loadFromStorage(STORAGE_MEME);
+    console.log('loadedMemes', loadedMemes);
+    return loadedMemes;
+}
+
+
+
+
