@@ -25,6 +25,8 @@
     flex-basis: 50%;
 }
 
+/* hide */
+
 .visible {
     display: none;
 }

@@ -42,26 +42,30 @@
         </main>
     </section>
     <!-- EDITOR-MEME\CANVAS -->
-    <section class="visible my-editor main-layout flex align-center">
-        <main class="">
-            <div class="editor-container">
-                <div class="container-tools-editor">
-                    <input type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
-                    <input type="color" onchange="setColor(this)">
-                    <button onclick="onSetFontSize('+')"><img class="icon" src="ICONS/increase-font.png"></button>
-                    <button onclick="onSetFontSize('-')"><img class="icon" src="ICONS/decrease-font.png"></button>
-                    <button onclick="onSwitchLine(this)"><img class="icon" src="ICONS/switch-lines.png"></button>
-                    <button><img class="icon" src="ICONS/align-to-left.png"></button>
-                    <button><img class="icon" src="ICONS/align-to-right.png"></button>
-                    <button><img class="icon" src="ICONS/align-to-center.png"></button>
-                    <button><img class="icon" src="ICONS/facebook-logo.png"></button>
-                    <button><img class="icon" src="ICONS/add.png"></button>
-                </div>
-                <div class=" canvas-container">
-                    <canvas id="my-canvas" height="400" width="641"></canvas>
-                </div>
+    <section class="visible main-layout editor">
+        <!-- <main class=""> -->
+        <div class="editor-container flex">
+            <!-- CANVAS -->
+            <div class="canvas-container">
+                <canvas id="my-canvas" width="600" height="400"></canvas>
             </div>
-        </main>
+            <!-- TOOLS-EDITOR -->
+            <div class="container-tools-editor">
+                <input type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
+                <input type="color" onchange="setColor(this)">
+                <button onclick="onSetFontSize('+')"><img class="icon-btn" src="ICONS/increase-font.png"></button>
+                <button onclick="onSetFontSize('-')"><img class="icon-btn" src="ICONS/decrease-font.png"></button>
+                <button onclick="onSwitchLine(this)"><img class="icon-btn" src="ICONS/switch-lines.png"></button>
+                <button><img class="icon-btn" src="ICONS/align-to-left.png"></button>
+                <button><img class="icon-btn" src="ICONS/align-to-right.png"></button>
+                <button><img class="icon-btn" src="ICONS/align-to-center.png"></button>
+                <button><img class="icon-btn" src="ICONS/facebook-logo.png"></button>
+                <button><img class="icon-btn" src="ICONS/add.png"></button>
+                <button class="btn">Share</button>
+                <button class="btn">Download</button>
+            </div>
+        </div>
+        <!-- </main> -->
     </section>
     <footer class="main-footer">
         <div class="top-footer">

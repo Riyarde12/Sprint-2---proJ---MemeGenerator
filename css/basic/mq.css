@@ -1,6 +1,19 @@
 @media (max-width: 650px) {
     .main-layout {
+        margin: 20px auto;
         max-width: 450px;
+        padding: 5px 0px 5px;
+    }
+
+    #my-canvas {
+        width: 18.625em;
+        height: 20.875em;
+    }
+
+    .editor-container {
+        max-width: 370px;
+        margin: auto;
+        flex-direction: column;
     }
 
     .myImg {
@@ -13,8 +26,8 @@
         margin: auto;
     }
 
-    .my-editor {
-        max-width: 370px;
+    .editor {
+        max-width: 420px;
     }
 
     .main-footer {
@@ -22,11 +35,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
 }
 
 @media (min-width: 650px) {
+
+    .editor-container {
+        background-color: var(--clr2);
+        flex-direction: row;
+        justify-content: center;
+        gap: 1em;
+    }
+
     .top-fotter {
         display: flex;
         flex-direction: row;
@@ -37,6 +57,11 @@
         width: 225px;
     }
 
+    .canvas-container {
+        width: 33.8125em;
+        height: 37.5em;
+    }
+
     .content {
         padding: 5px;
     }
@@ -45,7 +70,6 @@
 @media (min-width: 760px) {
     .top-fotter {
         padding-left: 150px;
-
     }
 
     p {

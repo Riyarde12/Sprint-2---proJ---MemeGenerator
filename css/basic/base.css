@@ -30,12 +30,15 @@ img {
     gap: 1.57142em 1.5em;
 }
 
-img.icon {
-    width: 3.751rem;
+img.icon-btn {
+    width: 3.75em;
+    height: 3.75em;
+    font-size: 1.5em;
 }
 
 .search-icon {
     width: 1.2rem;
+
 }
 
 .myImg {
@@ -51,5 +54,14 @@ h6 {
     line-height: 1.5;
 }
 
-
-/* .div-container {} */
+.btn {
+    background-color: var(--clr1);
+    border-radius: 0.42857em;
+    width: 7.5em;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.0;
+    height: 3.75em;
+    color: #fff;
+    font-family: montserrat
+}

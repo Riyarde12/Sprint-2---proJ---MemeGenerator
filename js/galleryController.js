@@ -6,11 +6,11 @@ function onClickImg(elImg) {
 
 function openEditor() {
     document.querySelector('.main-gallery').classList.add('visible');
-    document.querySelector('.my-editor').classList.remove('visible');
+    document.querySelector('.editor').classList.remove('visible');
 }
 
 function openGallery() {
-    document.querySelector('.my-editor').classList.add('visible');
+    document.querySelector('.editor').classList.add('visible');
     document.querySelector('.main-gallery').classList.remove('visible');
 }
 

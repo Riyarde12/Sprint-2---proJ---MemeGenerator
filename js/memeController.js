@@ -9,6 +9,7 @@ function init() {
     createImgs();
     resizeCanvas();
     renderGallery();
+    // addListeners();
 }
 
 function addListeners() {

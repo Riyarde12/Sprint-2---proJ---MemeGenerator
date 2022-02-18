@@ -1,17 +1,11 @@
-.my-editor {
-    flex-wrap: wrap;
-}
-
-.canvas-container {
-    /* margin: auto; */
+.editor {
+    background-color: var(--clr2);
 }
 
 .container-tools-editor {
     flex-wrap: wrap;
 }
 
-.editor-container {
-    background-color: var(--clr2);
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
+#my-canvas {
+    width: 26.8125em;
 }
