@@ -37,12 +37,6 @@ var gMeme = {
             font: 'Impact',
             pos: { x: 30, y: 30 },
         },
-        // {
-        //     txt: 'May the force be with you',
-        //     size: 20,
-        //     align: 'left',
-        //     color: 'black'
-        // }
     ]
 };
 
