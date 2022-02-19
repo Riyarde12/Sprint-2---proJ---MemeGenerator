@@ -57,8 +57,16 @@
             </div>
             <!-- TOOLS-EDITOR -->
             <div class="container-tools-editor">
-                <input type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
-                <input type="color" onchange="setColor(this)">
+                <input class="input-text" type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
+                <input class="change-color" type="color" onchange="setColor(this)">
+                <select onclick="onSelectFont(this.value)">
+                    <option>Arial</option>
+                    <option>Verdana</option>
+                    <option>Tahoma</option>
+                    <option>Trebuchet</option>
+                    <option>Georgia</option>
+                    <option>Gelvetica</option>
+                </select>
                 <button onclick="onSetFontSize('+')"><img class="icon-btn" src="ICONS/increase-font.png"></button>
                 <button onclick="onSetFontSize('-')"><img class="icon-btn" src="ICONS/decrease-font.png"></button>
                 <button onclick="onSwitchLine(this)"><img class="icon-btn" src="ICONS/switch-lines.png"></button>
@@ -68,14 +76,6 @@
                 <button><img class="icon-btn" src="ICONS/facebook-logo.png"></button>
                 <button><img class="icon-btn" src="ICONS/add.png" onclick="onAddLine()"></button>
                 <button onclick="onRemoveLine()"><img class="icon-btn" src="ICONS/trash.png"></button>
-                <select onclick="onSelectFont(this.value)">
-                    <option>Arial</option>
-                    <option>Verdana</option>
-                    <option>Tahoma</option>
-                    <option>Trebuchet</option>
-                    <option>Georgia</option>
-                    <option>Gelvetica</option>
-                </select>
                 <button class="btn">Share</button>
                 <button class="btn" onclick="saveMemeToStorage()">Save Meme !</button>
                 <button class="btn">

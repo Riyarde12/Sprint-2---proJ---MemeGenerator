@@ -1,8 +1,21 @@
-@media (max-width: 650px) {
+@media (max-width: 550px) {
     .main-layout {
-        /* margin: 20px auto; */
         max-width: 450px;
         padding: 5px 0px 5px;
+    }
+
+    .button {
+        max-width: 100px;
+    }
+
+    .container-tools-editor {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main-gallery {
+        padding: 15px;
     }
 
     #my-canvas {
@@ -44,6 +57,10 @@
 }
 
 @media (min-width: 650px) {
+
+    img {
+        max-width: 166px;
+    }
 
     .editor-container {
         background-color: var(--clr2);
@@ -96,4 +113,20 @@
     .myImg {
         height: 173px;
     }
+
+    button {
+        max-width: 7.25em;
+        max-height: 7.25em;
+    }
+
+    .main-gallery {
+        padding: 15px;
+    }
+
+    .input-text {
+        max-height: 6.25rem;
+        border-radius: 15px;
+    }
+
+
 }
