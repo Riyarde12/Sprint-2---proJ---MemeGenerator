@@ -32,7 +32,8 @@ var gMeme = {
             size: 20,
             align: 'left',
             color: 'black',
-            font: 'Impact'
+            font: 'Impact',
+
         },
         {
             txt: 'May the force be with you',
@@ -42,7 +43,6 @@ var gMeme = {
         }
     ]
 };
-
 
 function createImgs() {
     var imgs = [];
@@ -68,12 +68,6 @@ function getImgs() {
 function getMeme() {
     return gMeme;
 }
-
-// function getImgById(imgId) {
-//     var currImg = gImgs.find(img => imgId === img.id);
-//     console.log(currImg);
-//     return currImg;
-// }
 
 function getImgById(imgId) {
     return gImgs.find(img => imgId === img.id);
@@ -109,7 +103,8 @@ function setNewLine() {
         txt: '',
         size: 20,
         align: 'left',
-        color: 'black'
+        color: 'black',
+        font: ''
     });
     saveMemeToStorage();
 }
@@ -134,6 +129,29 @@ function loadMemesFromStorage() {
     return loadedMemes;
 }
 
+function setFont(newFont) {
 
+    switch (newFont) {
+        case 'Arial':
+            gMeme.lines[gMeme.selectedLineIdx].font = 'Arial';
+            break;
+        case 'Verdana':
+            gMeme.lines[gMeme.selectedLineIdx].font = 'Verdana';
+            break;
+        case 'Tahoma':
+            gMeme.lines[gMeme.selectedLineIdx].font = 'Tahoma';
+            break;
+        case 'Trebuchet':
+            gMeme.lines[gMeme.selectedLineIdx].font = 'Trebuchet';
+            break;
+        case 'Georgia':
+            gMeme.lines[gMeme.selectedLineIdx].font = 'Georgia';
+            break;
+        case 'Gelvetica':
+            gMeme.lines[gMeme.selectedLineIdx].font = 'Gelvetica';
+    }
+}
 
-
+function deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+}

@@ -41,32 +41,13 @@ function drawImg(imgId, meme) {
 }
 
 function drawText(x, y, currline) {
-
     const meme = getMeme();
-    console.log('meme', meme);
-    if (x === 30 && y === 30) {
-
-        gCtx.strokeStyle = meme.lines[0].color;
-        gCtx.fillStyle = meme.lines[0].color;
-        gCtx.font = `${meme.lines[0].size}px ${meme.lines[0].font}`;
-
-        gCtx.strokeText(currline.txt, x, y);
-    }
-    if (x === 30 && y === 350) {
-
-        gCtx.strokeStyle = meme.lines[1].color;
-        gCtx.fillStyle = meme.lines[1].color;
-        gCtx.font = `${meme.lines[1].size}px Impact`;
-        gCtx.strokeText(currline.txt, x, y);
-
-    } else {
-
-        gCtx.strokeStyle = meme.lines[meme.selectedLineIdx].color;
-        gCtx.fillStyle = meme.lines[meme.selectedLineIdx].color;
-        gCtx.font = `${meme.lines[meme.selectedLineIdx].size}px Impact`;
-        // gCtx.fillText(currline.txt, x, y);
-        gCtx.strokeText(currline.txt, x, y);
-    }
+    if (!currline) return;
+    if (!meme.lines[meme.selectedLineIdx].color) return;
+    gCtx.strokeStyle = meme.lines[meme.selectedLineIdx].color;
+    gCtx.fillStyle = meme.lines[meme.selectedLineIdx].color;
+    gCtx.font = `${meme.lines[meme.selectedLineIdx].size}px ${meme.lines[meme.selectedLineIdx].font}`;
+    gCtx.strokeText(currline.txt, x, y);
 }
 
 function UpdateMemeImg(imgId) {
@@ -121,14 +102,15 @@ function onAddLine() {
 }
 
 function onRemoveLine() {
-
+    // debugger;
+    deleteLine();
+    renderMeme();
 }
 
 function openLoadedMemes() {
     document.querySelector('.main-gallery').classList.add('visible');
     document.querySelector('.saved-memes-modal').classList.remove('visible');
     var memes = loadMemesFromStorage();
-    console.log('memes', memes);
 
     var strHtml = memes.map((meme) => {
         return `<img src="${meme}">`;
@@ -137,3 +119,7 @@ function openLoadedMemes() {
     elMemesGrid.innerHTML = strHtml;
 }
 
+function onSelectFont(value) {
+    setFont(value);
+    renderMeme();
+}

@@ -62,7 +62,15 @@
                 <button><img class="icon-btn" src="ICONS/align-to-center.png"></button>
                 <button><img class="icon-btn" src="ICONS/facebook-logo.png"></button>
                 <button><img class="icon-btn" src="ICONS/add.png" onclick="onAddLine()"></button>
-                <button><img class="icon-btn" src="ICONS/trash.png" onclick="onRemoveLine()"></button>
+                <button onclick="onRemoveLine()"><img class="icon-btn" src="ICONS/trash.png"></button>
+                <select onclick="onSelectFont(this.value)">
+                    <option>Arial</option>
+                    <option>Verdana</option>
+                    <option>Tahoma</option>
+                    <option>Trebuchet</option>
+                    <option>Georgia</option>
+                    <option>Gelvetica</option>
+                </select>
                 <button class="btn">Share</button>
                 <button class="btn" onclick="saveMemeToStorage()">Save Meme !</button>
                 <button class="btn">
