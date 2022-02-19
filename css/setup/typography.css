@@ -7,3 +7,8 @@
     font-family: Impact;
     src: url(/fonts/Impact-Font/impact.ttf);
 }
+
+@font-face {
+    font-family: alfa_slab;
+    src: url(/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf);
+}

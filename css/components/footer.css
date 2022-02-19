@@ -15,3 +15,12 @@
 .content {
     padding: 15px;
 }
+
+.top-footer {
+    display: flex;
+}
+
+.bottom-footer .logo {
+    text-align: center;
+    padding-top: 35px;
+}

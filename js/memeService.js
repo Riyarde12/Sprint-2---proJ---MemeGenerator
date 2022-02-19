@@ -18,11 +18,13 @@ const memesSentences = [
     'Write hello world , add to cv 7 years experienced',
 ];
 
+
 const STORAGE_MEME = 'memes';
 const STORAGE_IMG = 'images';
+
 var savedMemes = [];
-var gIdx = 1;
-var gImgs = [];
+
+
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
@@ -33,44 +35,19 @@ var gMeme = {
             align: 'left',
             color: 'black',
             font: 'Impact',
-
+            pos: { x: 30, y: 30 },
         },
-        {
-            txt: 'May the force be with you',
-            size: 20,
-            align: 'left',
-            color: 'black'
-        }
+        // {
+        //     txt: 'May the force be with you',
+        //     size: 20,
+        //     align: 'left',
+        //     color: 'black'
+        // }
     ]
 };
 
-function createImgs() {
-    var imgs = [];
-    for (var i = 0; i < 9; i++) {
-        imgs.push(createImg());
-    }
-    gImgs = imgs;
-    console.log(gImgs);
-    _saveImgToStorage();
-}
-
-function createImg() {
-    return {
-        id: gIdx,
-        url: `imgs/${gIdx++}.jpg`,
-    };
-}
-
-function getImgs() {
-    return gImgs;
-}
-
 function getMeme() {
     return gMeme;
-}
-
-function getImgById(imgId) {
-    return gImgs.find(img => imgId === img.id);
 }
 
 function setLineTxt(newText) {
@@ -99,14 +76,27 @@ function setLine() {
 }
 
 function setNewLine() {
+
+    if (gMeme.lines.length === 0) {
+        createLine(30, 30);
+    }
+    else if (gMeme.lines.length === 1) {
+        createLine(30, 250);
+    }
+    else {
+        createLine(30, 30 * gMeme.lines.length);
+    }
+}
+
+function createLine(x, y) {
     gMeme.lines.push({
         txt: '',
         size: 20,
         align: 'left',
         color: 'black',
-        font: ''
+        font: '',
+        pos: { x, y }
     });
-    saveMemeToStorage();
 }
 
 function saveMemeToStorage() {
@@ -154,4 +144,5 @@ function setFont(newFont) {
 
 function deleteLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1);
-}
+};
+

@@ -17,25 +17,30 @@
                 <div>
                     <h1 class="logo">Memegen</h1>
                 </div>
-                <div>
-                    <h3 onclick="openGallery()">Gallery</h3>
-                    <h3 onclick="openLoadedMemes()">Load Memes</h3>
-                    <h3>About</h3>
+                <div class="nav-bar">
+                    <h3 class="cursor" onclick="openGallery()">Gallery</h3>
+                    <h3 class="cursor" onclick="openLoadedMemes()">Load Memes</h3>
+                    <h3 class="cursor">About</h3>
                 </div>
             </div>
-            <nav>
+            <section>
                 <div class="search-bar">
                     <input type="search" placeholder="Enter search Keyword" id="site-search" name="q"
                         aria-label="Search through site content">
                     <label for="site-search"><img class="search-icon" src="ICONS/search-icon.png"></label>
                 </div>
-            </nav>
+            </section>
 
         </div>
     </header>
     <!-- MAIN GALLERY -->
     <section class="main-gallery">
-        <main class="main-gallery main-layout">
+        <input list="category" placeholder="Categories"
+            onchange="this.title=this.value;onSelectCategory({category: this.value})">
+
+        <datalist id="category"></datalist>
+
+        <main class=" main-gallery main-layout">
             <div class="div-container main-layout">
                 <div class="grid">
                 </div>
@@ -76,6 +81,9 @@
                 <button class="btn">
                     <a href="#" onclick="downloadCanvas(this)" download="myphoto">Download</a>
                 </button>
+                <div class="share-container">
+                    <button class="btn" onclick="uploadImg()">Upload Image from Canvas</button>
+                </div>
             </div>
         </div>
         <!-- </main> -->
@@ -88,7 +96,7 @@
             </div>
         </div>
     </section>
-
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="top-footer">
             <div class="container-about"><img class="myImg" src="imgs/me_img.jpg"></div>
@@ -100,11 +108,10 @@
                     quia
                     officia. Quas.</p>
             </div>
-
         </div>
-        <div class="bottom-footer">Memegen</div>
-        <img src="" alt="">
-
+        <div class="bottom-footer">
+            <h1 class="logo">Memegen</h1>
+        </div>
     </footer>
 
     <script src="js/local-storage.js"></script>

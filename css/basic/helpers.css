@@ -30,3 +30,7 @@
 .visible {
     display: none;
 }
+
+.cursor {
+    cursor: pointer;
+}

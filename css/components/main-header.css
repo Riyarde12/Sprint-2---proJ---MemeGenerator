@@ -6,7 +6,7 @@
 
 .top-bar {
     background-color: var(--clr1);
-    flex-direction: row;
+    flex-direction: column;
     padding-left: 40px;
     padding-right: 40px;
 }
