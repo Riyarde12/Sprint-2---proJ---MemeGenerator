@@ -3,22 +3,23 @@
 var gCanvas;
 var gCtx;
 
+
 function init() {
     // gCanvas = document.getElementById('my-canvas');
     gCanvas = document.querySelector('canvas');
     gCtx = gCanvas.getContext('2d');
     createImgs();
-    renderFilterByQueryStringParams();
+    // renderFilterByQueryStringParams();
+    setImgForCategory();
     renderCategory();
     renderGallery();
-    addEventListener();
+    addEventListeners();
     // resizeCanvas();
-    setImgForCategory();
     focusOnTextLine();
 }
 
-function addEventListener() {
-    document.querySelector('.canvas-container').addEventListener('resize', resizeCanvas);
+function addEventListeners() {
+    window.addEventListener('resize', resizeCanvas);
 
 }
 
@@ -26,10 +27,6 @@ function renderMeme() {
 
     const meme = getMeme();
     drawImg(meme.selectedImgId, meme);
-    // meme.lines.forEach(currline => {
-    //     drawText(currline.pos.x, currline.pos.y, currline);
-    // });
-
 }
 
 function drawImg(imgId, meme) {
@@ -99,7 +96,10 @@ function resizeCanvas() {
 
     var elContainer = document.querySelector('.canvas-container');
     // Note: changing the canvas dimension this way clears the canvas
+    console.log('elContainer.offsetWidth', elContainer.offsetWidth);
+    if (elContainer.offsetWidth >= 370) return;
     gCanvas.width = elContainer.offsetWidth;
+    renderMeme();
 }
 
 function downloadCanvas(elLink) {

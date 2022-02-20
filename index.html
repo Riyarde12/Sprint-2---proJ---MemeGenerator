@@ -12,82 +12,115 @@
 <body onload="init()">
     <!-- HEADER NAV-BAR -->
     <header class="main-header">
-        <div class="header-container flex space-between ">
-            <div class="top-bar flex space-between">
+
+        <div class="header-container flex">
+            <div class="top-bar flex">
                 <div>
                     <h1 class="logo">Memegen</h1>
                 </div>
-                <div class="nav-bar">
-                    <h3 class="cursor" onclick="openGallery()">Gallery</h3>
-                    <h3 class="cursor" onclick="openLoadedMemes()">Load Memes</h3>
-                    <h3 class="cursor">About</h3>
+                <div class="nav-container">
+                    <ul class="nav clean-list flex">
+                        <li>
+                            <h3 class="cursor" onclick="openGallery()">Gallery</h3>
+                        </li>
+                        <li>
+                            <h3 class="cursor" onclick="openLoadedMemes()">Load Memes</h3>
+                        </li>
+                        <li>
+                            <h3 class="cursor">About</h3>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <section>
-                <div class="search-bar">
-                    <input type="search" placeholder="Enter search Keyword" id="site-search" name="q"
-                        aria-label="Search through site content">
-                    <label for="site-search"><img class="search-icon" src="ICONS/search-icon.png"></label>
-                </div>
-            </section>
-
         </div>
+
     </header>
+
     <!-- MAIN GALLERY -->
-    <section class="main-gallery">
-        <input list="category" placeholder="Categories" oninput="onSelectCategory({category: this.value})">
-        <!-- onchange="this.title=this.value;onSelectCategory({category: this.value})"> -->
 
-        <datalist id="category"></datalist>
-
-        <main class=" main-gallery main-layout">
-            <div class="div-container main-layout">
-                <div class="grid">
-                </div>
+    <section class="main-gallery main-layout">
+        <div class="container-gallery">
+            <div>
+                <input list="category" placeholder="Categories" oninput="onSelectCategory({category: this.value})">
+                <datalist id="category"></datalist>
             </div>
-        </main>
+            <main class="">
+                <div class="div-container">
+                    <div class="grid">
+                    </div>
+                </div>
+            </main>
+        </div>
     </section>
+
     <!-- EDITOR-MEME\CANVAS -->
+
     <section class="visible main-layout editor">
-        <!-- <main class=""> -->
+
         <div class="editor-container flex">
+
             <!-- CANVAS -->
             <div class="canvas-container">
                 <canvas id="my-canvas" width="300" height="300"></canvas>
             </div>
+
             <!-- TOOLS-EDITOR -->
             <div class="container-tools-editor">
-                <input class="input-text" type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
-                <input class="change-color" type="color" onchange="setColor(this)">
-                <select onclick="onSelectFont(this.value)">
-                    <option>Impact</option>
-                    <option>Arial</option>
-                    <option>Verdana</option>
-                    <option>Tahoma</option>
-                    <option>Trebuchet</option>
-                    <option>Georgia</option>
-                    <option>Gelvetica</option>
-                </select>
-                <button onclick="onSetFontSize('+')"><img class="icon-btn" src="ICONS/increase-font.png"></button>
-                <button onclick="onSetFontSize('-')"><img class="icon-btn" src="ICONS/decrease-font.png"></button>
-                <button onclick="onSwitchLine(this)"><img class="icon-btn" src="ICONS/switch-lines.png"></button>
-                <button><img class="icon-btn" src="ICONS/align-to-left.png"></button>
-                <button><img class="icon-btn" src="ICONS/align-to-right.png"></button>
-                <button><img class="icon-btn" src="ICONS/align-to-center.png"></button>
-                <button><img class="icon-btn" src="ICONS/facebook-logo.png"></button>
-                <button><img class="icon-btn" src="ICONS/add.png" onclick="onAddLine()"></button>
-                <button onclick="onRemoveLine()"><img class="icon-btn" src="ICONS/trash.png"></button>
-                <button class="btn">Share</button>
-                <button class="btn" onclick="saveMemeToStorage()">Save Meme !</button>
-                <button class="btn">
-                    <a href="#" onclick="downloadCanvas(this)" download="myphoto">Download</a>
-                </button>
-                <div class="share-container">
-                    <button class="btn" onclick="uploadImg()">Upload Image from Canvas</button>
+
+                <div>
+                    <input class="change-color" type="color" onchange="setColor(this)">
+                    <input class="input-text" type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
+                    <select onclick="onSelectFont(this.value)">
+                        <option>Impact</option>
+                        <option>Arial</option>
+                        <option>Verdana</option>
+                        <option>Tahoma</option>
+                        <option>Trebuchet</option>
+                        <option>Georgia</option>
+                        <option>Gelvetica</option>
+                    </select>
                 </div>
+
+                <div>
+                    <button onclick="onSetFontSize('+')">
+                        <img class="icon-btn" src="ICONS/increase-font.png">
+                    </button>
+                    <button onclick="onSetFontSize('-')">
+                        <img class="icon-btn" src="ICONS/decrease-font.png">
+                    </button>
+                    <button onclick="onSwitchLine(this)">
+                        <img class="icon-btn" src="ICONS/switch-lines.png">
+                    </button>
+                    <button>
+                        <img class="icon-btn" src="ICONS/add.png" onclick="onAddLine()">
+                    </button>
+                </div>
+
+                <div>
+                    <button>
+                        <img class="icon-btn" src="ICONS/align-to-left.png">
+                    </button>
+                    <button>
+                        <img class="icon-btn" src="ICONS/align-to-right.png">
+                    </button>
+                    <button>
+                        <img class="icon-btn" src="ICONS/align-to-center.png">
+                    </button>
+                    <button onclick="onRemoveLine()">
+                        <img class="icon-btn" src="ICONS/trash.png">
+                    </button>
+                </div>
+
+                <div>
+                    <button class="btn" onclick="saveMemeToStorage()">Save</button>
+                    <button class="btn">
+                        <a href="#" onclick="downloadCanvas(this)" download="myphoto">Download</a>
+                    </button>
+                    <button class="btn" onclick="uploadImg()">Share</button>
+                </div>
+
             </div>
         </div>
-        <!-- </main> -->
     </section>
 
     <section>
@@ -97,10 +130,14 @@
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer class="main-footer">
+
         <div class="top-footer">
-            <div class="container-about"><img class="myImg" src="imgs/me_img.jpg"></div>
+            <div class="container-about">
+                <img class="myImg" src="imgs/me_img.jpg">
+            </div>
             <div class="content">
                 <h3>Yarden Rishoni</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi harum expedita ab laborum dolor iusto
@@ -113,10 +150,10 @@
         <div class="bottom-footer">
             <h1 class="logo">Memegen</h1>
         </div>
+
     </footer>
 
     <script src="js/local-storage.js"></script>
-    <script src="js/util-meme.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/galleryService.js"></script>
     <script src="js/memeService.js"></script>

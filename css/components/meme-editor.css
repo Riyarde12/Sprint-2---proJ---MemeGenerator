@@ -3,5 +3,23 @@
 }
 
 .container-tools-editor {
+    flex-direction: column;
     flex-wrap: wrap;
+    margin-bottom: 10px;
+    border: 35px #8080803b solid;
+    border-radius: 6px;
+    display: flex;
+    flex-grow: 1;
+}
+
+
+
+.editor-container {
+    flex-direction: column;
+    padding-top: 10px;
+
+}
+
+.canvas-container {
+    margin: auto;
 }
