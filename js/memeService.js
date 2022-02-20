@@ -45,13 +45,16 @@ function getMeme() {
 }
 
 function setLineTxt(newText) {
+
     gMeme.lines[gMeme.selectedLineIdx].txt = newText;
 }
 
 function setFontSize(selectedFontSize) {
+
     switch (selectedFontSize) {
         case '+':
             gMeme.lines[gMeme.selectedLineIdx].size++;
+            console.log('size', gMeme.lines[gMeme.selectedLineIdx]);
             break;
         case '-':
             gMeme.lines[gMeme.selectedLineIdx].size--;
@@ -60,13 +63,14 @@ function setFontSize(selectedFontSize) {
 }
 
 function setColorFont(selectedColor) {
+
     gMeme.lines[gMeme.selectedLineIdx].color = selectedColor;
 }
 
 function setLine() {
+
     gMeme.selectedLineIdx++;
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
-    console.log('currline set - service', gMeme.selectedLineIdx);
 }
 
 function setNewLine() {
@@ -75,7 +79,7 @@ function setNewLine() {
         createLine(30, 30);
     }
     else if (gMeme.lines.length === 1) {
-        createLine(30, 250);
+        createLine(30, 350);
     }
     else {
         createLine(30, 30 * gMeme.lines.length);
@@ -88,7 +92,7 @@ function createLine(x, y) {
         size: 20,
         align: 'left',
         color: 'black',
-        font: '',
+        font: 'Impact',
         pos: { x, y }
     });
 }
@@ -99,7 +103,6 @@ function saveMemeToStorage() {
     var dataUrl = gCanvas.toDataURL();
 
     savedMemes.push(dataUrl);
-    console.log(savedMemes);
     saveToStorage(STORAGE_MEME, savedMemes);
 }
 
@@ -109,7 +112,7 @@ function _saveImgToStorage() {
 
 function loadMemesFromStorage() {
     var loadedMemes = loadFromStorage(STORAGE_MEME);
-    console.log('loadedMemes', loadedMemes);
+
     return loadedMemes;
 }
 

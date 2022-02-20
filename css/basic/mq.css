@@ -18,10 +18,10 @@
         padding: 15px;
     }
 
-    #my-canvas {
+    /* #my-canvas {
         width: 18.625em;
         height: 20.875em;
-    }
+    } */
 
     .editor-container {
         max-width: 370px;
@@ -91,10 +91,10 @@
         height: 179px;
     }
 
-    .canvas-container {
+    /* .canvas-container {
         width: 33.8125em;
         height: 37.5em;
-    }
+    } */
 
     .content {
         padding: 5px;

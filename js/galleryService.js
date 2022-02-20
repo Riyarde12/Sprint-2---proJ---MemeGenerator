@@ -13,8 +13,6 @@ function createImgs() {
         imgs.push(createImg());
     }
     gImgs = imgs;
-    console.log(gImgs);
-    _saveImgToStorage();
 }
 
 function createImg() {

@@ -4,21 +4,32 @@ var gCanvas;
 var gCtx;
 
 function init() {
-    gCanvas = document.getElementById('my-canvas');
+    // gCanvas = document.getElementById('my-canvas');
+    gCanvas = document.querySelector('canvas');
     gCtx = gCanvas.getContext('2d');
     createImgs();
     renderFilterByQueryStringParams();
     renderCategory();
     renderGallery();
-    resizeCanvas();
+    addEventListener();
+    // resizeCanvas();
     setImgForCategory();
     focusOnTextLine();
+}
+
+function addEventListener() {
+    document.querySelector('.canvas-container').addEventListener('resize', resizeCanvas);
+
 }
 
 function renderMeme() {
 
     const meme = getMeme();
     drawImg(meme.selectedImgId, meme);
+    // meme.lines.forEach(currline => {
+    //     drawText(currline.pos.x, currline.pos.y, currline);
+    // });
+
 }
 
 function drawImg(imgId, meme) {
@@ -26,7 +37,7 @@ function drawImg(imgId, meme) {
     var img = new Image();
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-        meme.lines.forEach((currline, idx) => {
+        meme.lines.forEach(currline => {
             drawText(currline.pos.x, currline.pos.y, currline);
         });
     };
@@ -35,11 +46,12 @@ function drawImg(imgId, meme) {
 }
 
 function drawText(x, y, currline) {
-
+    console.log(currline);
     if (!currline) return;
     gCtx.strokeStyle = currline.color;
     gCtx.fillStyle = currline.color;
     gCtx.font = `${currline.size}px ${currline.font}`;
+    console.log(gCtx.font);
     gCtx.strokeText(currline.txt, x, y);
 }
 
@@ -58,7 +70,7 @@ function setColor(elInput) {
 }
 
 function onSetFontSize(selectFontSize) {
-
+    // debugger;
     setFontSize(selectFontSize);
     renderMeme();
 }
@@ -87,7 +99,7 @@ function resizeCanvas() {
 
     var elContainer = document.querySelector('.canvas-container');
     // Note: changing the canvas dimension this way clears the canvas
-    gCanvas.width = elContainer.offsetWidth - 20;
+    gCanvas.width = elContainer.offsetWidth;
 }
 
 function downloadCanvas(elLink) {

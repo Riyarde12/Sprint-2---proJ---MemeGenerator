@@ -1,19 +1,19 @@
 @font-face {
     font-family: montserrat;
-    src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    src: url(../../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: Impact;
-    src: url(/fonts/Impact-Font/impact.ttf);
+    src: url(../../fonts/Impact-Font/Impacted.ttf);
 }
 
 @font-face {
     font-family: alfa_slab;
-    src: url(/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf);
+    src: url(../../fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf);
 }
 
 @font-face {
     font-family: ubunto-medium;
-    src: url(/fonts/Ubuntu/Ubuntu-Medium.ttf)
+    src: url(../../fonts/Ubuntu/Ubuntu-Medium.ttf)
 }

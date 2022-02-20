@@ -35,8 +35,8 @@
     </header>
     <!-- MAIN GALLERY -->
     <section class="main-gallery">
-        <input list="category" placeholder="Categories"
-            onchange="this.title=this.value;onSelectCategory({category: this.value})">
+        <input list="category" placeholder="Categories" oninput="onSelectCategory({category: this.value})">
+        <!-- onchange="this.title=this.value;onSelectCategory({category: this.value})"> -->
 
         <datalist id="category"></datalist>
 
@@ -53,13 +53,14 @@
         <div class="editor-container flex">
             <!-- CANVAS -->
             <div class="canvas-container">
-                <canvas id="my-canvas" width="600" height="400"></canvas>
+                <canvas id="my-canvas" width="300" height="300"></canvas>
             </div>
             <!-- TOOLS-EDITOR -->
             <div class="container-tools-editor">
                 <input class="input-text" type="text" id="myText" placeholder="Name" onkeyup="onSetLineText(this)">
                 <input class="change-color" type="color" onchange="setColor(this)">
                 <select onclick="onSelectFont(this.value)">
+                    <option>Impact</option>
                     <option>Arial</option>
                     <option>Verdana</option>
                     <option>Tahoma</option>
