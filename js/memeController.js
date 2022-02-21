@@ -5,7 +5,7 @@ var gCtx;
 
 
 function init() {
-    // gCanvas = document.getElementById('my-canvas');
+
     gCanvas = document.querySelector('canvas');
     gCtx = gCanvas.getContext('2d');
     createImgs();
@@ -14,11 +14,11 @@ function init() {
     renderCategory();
     renderGallery();
     addEventListeners();
-    // resizeCanvas();
     focusOnTextLine();
 }
 
 function addEventListeners() {
+
     window.addEventListener('resize', resizeCanvas);
 
 }
@@ -47,6 +47,7 @@ function drawText(x, y, currline) {
     if (!currline) return;
     gCtx.strokeStyle = currline.color;
     gCtx.fillStyle = currline.color;
+    gCtx.textAlign = currline.align;
     gCtx.font = `${currline.size}px ${currline.font}`;
     console.log(gCtx.font);
     gCtx.strokeText(currline.txt, x, y);
@@ -96,7 +97,6 @@ function resizeCanvas() {
 
     var elContainer = document.querySelector('.canvas-container');
     // Note: changing the canvas dimension this way clears the canvas
-    console.log('elContainer.offsetWidth', elContainer.offsetWidth);
     if (elContainer.offsetWidth >= 370) return;
     gCanvas.width = elContainer.offsetWidth;
     renderMeme();
@@ -157,3 +157,7 @@ function uploadImg() {
     doUploadImg(imgDataUrl, onSuccess);
 }
 
+function alignText(align) {
+    setTextAlign(align);
+    renderMeme();
+}

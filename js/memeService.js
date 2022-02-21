@@ -31,11 +31,11 @@ var gMeme = {
     lines: [
         {
             txt: 'I sometimes eat Falafel',
-            size: 20,
-            align: 'left',
+            size: 25,
+            align: 'center',
             color: 'black',
             font: 'Impact',
-            pos: { x: 30, y: 30 },
+            pos: { x: 120, y: 30 },
         },
     ]
 };
@@ -76,13 +76,13 @@ function setLine() {
 function setNewLine() {
 
     if (gMeme.lines.length === 0) {
-        createLine(30, 30);
+        createLine((gCanvas.width / 2), 30);
     }
     else if (gMeme.lines.length === 1) {
-        createLine(30, 350);
+        createLine((gCanvas.width / 2), 350);
     }
     else {
-        createLine(30, 30 * gMeme.lines.length);
+        createLine((gCanvas.width / 2), 30 * gMeme.lines.length);
     }
 }
 
@@ -143,3 +143,6 @@ function deleteLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1);
 };
 
+function setTextAlign(alignText) {
+    gMeme.lines[gMeme.selectedLineIdx].align = alignText;
+}
