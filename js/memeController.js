@@ -45,8 +45,9 @@ function drawImg(imgId, meme) {
 function drawText(x, y, currline) {
     console.log(currline);
     if (!currline) return;
+    gCtx.lineWidth = 2;
     gCtx.strokeStyle = currline.color;
-    gCtx.fillStyle = currline.color;
+    gCtx.fillStyle = 'white';
     gCtx.textAlign = currline.align;
     gCtx.font = `${currline.size}px ${currline.font}`;
     console.log(gCtx.font);
